@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="Dashboard Analytics" content="Meta description de la página" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBlue: '#172755',
+            brandPink: '#D11067',
+            brandBg: '#EAEDF4',
+            brandPurple: '#7357FF',
+            brandGray: '#666666'
+          },
+          fontFamily: {
+            heading: ['Nunito', 'sans-serif'],
+            body: ['Roboto', 'sans-serif']
+          },
+          boxShadow: {
+            card: '0 20px 40px rgba(23,39,85,.12)',
+            float: '26px 28px 31px -13px rgba(0,0,0,0.42)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'segicons';
+      src: url('./fonts/segicons.eot?65778044');
+      src: url('./fonts/segicons.eot?65778044#iefix') format('embedded-opentype'),
+           url('./fonts/segicons.woff?65778044') format('woff'),
+           url('./fonts/segicons.ttf?65778044') format('truetype'),
+           url('./fonts/segicons.svg?65778044#segicons') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: #EAEDF4; }
+    .skip-link{position:absolute;left:1rem;top:-5rem;transition:top .2s ease;z-index:60;}
+    .skip-link:focus{top:1rem;}
+    .social-icon::before{font-family:'segicons';font-size:1.125rem;line-height:1;display:block;}
+    .facebook::before{content:"\F09a"}.twitter::before{content:"\F099"}.instagram::before{content:"\F16d"}.tlf::before{content:"\E801"}.email::before{content:"\F0e0"}
+    .feature-sprite{background-image:url('./images/sprite-icons.png');background-repeat:no-repeat;background-size:390px auto;width:130px;height:114px;}
+    .sprite-clock{background-position:0 0;}
+    .sprite-screen{background-position:-130px 0;}
+    .sprite-rocket{background-position:-260px 0;}
+  </style>
+</head>
+<body class="font-body text-brandBlue">
+<title>Register</title>
+<header class="sticky top-0 z-50 bg-brandBlue/95 backdrop-blur supports-[backdrop-filter]:bg-brandBlue/90 shadow-lg">
+  <a href="#main-content" class="skip-link rounded-xl border-2 border-brandPink bg-brandBlue px-4 py-3 text-white">Skip to Main Content</a>
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 sm:px-6 lg:px-8">
+    <a href="index.html" class="shrink-0"><img src="./images/logo-header.svg" alt="Dashboard Analytics" class="h-8 w-auto sm:h-10"></a>
+    <button id="menuBtn" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 text-white md:hidden" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <div class="hidden items-center gap-8 md:flex">
+      <nav class="flex items-center gap-6"><a href="index.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">Main Features</a><a href="pricing.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">Pricing & Opinions</a><a href="faqs.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">FAQs</a></nav>
+      <div class="flex items-center gap-3 text-base">
+        <a href="signin.html" class="text-white/90 transition hover:text-white">Sign In</a>
+        <a href="register.html" class="rounded-full bg-brandPink px-5 py-2.5 font-medium text-white transition hover:bg-white hover:text-brandPink">Sign Up</a>
+      </div>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden border-t border-white/10 px-4 pb-4 md:hidden">
+    <nav class="flex flex-col gap-2 pt-4">
+      <a href="index.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">Main Features</a>
+      <a href="pricing.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">Pricing & Opinions</a>
+      <a href="faqs.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">FAQs</a>
+      <div class="mt-2 flex flex-col gap-2">
+        <a href="signin.html" class="rounded-xl border border-white/20 px-4 py-3 text-white/90">Sign In</a>
+        <a href="register.html" class="rounded-xl bg-brandPink px-4 py-3 text-center font-medium text-white">Sign Up</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+  <section class="py-12 sm:py-16">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.02fr_.98fr] lg:px-8">
+      <div class="rounded-[32px] bg-brandBlue px-7 py-10 text-white shadow-card sm:px-10 sm:py-12">
+        <span class="inline-flex rounded-full bg-white/10 px-4 py-2 text-sm font-medium tracking-[0.2em] text-white/80 uppercase">Create account</span>
+        <h1 class="mt-6 max-w-md font-heading text-4xl font-extrabold leading-tight sm:text-5xl">Start building smarter dashboards today.</h1>
+        <p class="mt-5 max-w-xl text-lg leading-8 text-white/80">Join Dashboard Analytics and centralize your metrics, alerts and automated reports in one clean workspace.</p>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="text-sm uppercase tracking-[0.18em] text-white/60">What you get</p><p class="mt-2 text-lg font-bold">250+ metrics and integrations</p></div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="text-sm uppercase tracking-[0.18em] text-white/60">Fast onboarding</p><p class="mt-2 text-lg font-bold">Ready in just a few minutes</p></div>
+        </div>
+        <div class="mt-10 flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brandPink text-xl font-bold">✓</div>
+          <p class="text-base leading-7 text-white/80">Use your account to save templates, compare plans and manage your team without friction.</p>
+        </div>
+      </div>
+
+      <form class="rounded-[32px] border border-white/60 bg-white/90 p-6 shadow-card backdrop-blur sm:p-8 lg:p-10">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p class="text-sm font-medium uppercase tracking-[0.2em] text-brandPink">Sign up</p>
+            <h2 class="mt-2 font-heading text-3xl font-extrabold sm:text-4xl">Create your account</h2>
+          </div>
+          <div class="hidden rounded-2xl bg-brandBg px-4 py-3 text-right sm:block">
+            <p class="text-xs uppercase tracking-[0.16em] text-brandBlue/60">Already registered?</p>
+            <a href="signin.html" class="mt-1 inline-flex font-bold text-brandPink hover:underline">Sign in</a>
+          </div>
+        </div>
+
+        <div class="mt-8 grid gap-5 md:grid-cols-2">
+          <label class="flex flex-col gap-2"><span class="text-sm font-bold uppercase tracking-[0.12em] text-brandPink">Name</span><input type="text" name="Name" required placeholder="Jane" class="h-12 rounded-2xl border border-slate-200 bg-white px-4 text-base outline-none transition focus:border-brandPink focus:ring-4 focus:ring-brandPink/10"></label>
+          <label class="flex flex-col gap-2"><span class="text-sm font-bold uppercase tracking-[0.12em] text-brandPink">Lastname</span><input type="text" name="Lastname" required placeholder="Doe" class="h-12 rounded-2xl border border-slate-200 bg-white px-4 text-base outline-none transition focus:border-brandPink focus:ring-4 focus:ring-brandPink/10"></label>
+          <label class="flex flex-col gap-2 md:col-span-2"><span class="text-sm font-bold uppercase tracking-[0.12em] text-brandPink">Country</span><input type="text" name="Country" required placeholder="Spain" class="h-12 rounded-2xl border border-slate-200 bg-white px-4 text-base outline-none transition focus:border-brandPink focus:ring-4 focus:ring-brandPink/10"></label>
+          <label class="flex flex-col gap-2"><span class="text-sm font-bold uppercase tracking-[0.12em] text-brandPink">E-mail</span><input type="email" name="E-mail" required placeholder="jane@company.com" class="h-12 rounded-2xl border border-slate-200 bg-white px-4 text-base outline-none transition focus:border-brandPink focus:ring-4 focus:ring-brandPink/10"></label>
+          <label class="flex flex-col gap-2"><span class="text-sm font-bold uppercase tracking-[0.12em] text-brandPink">Telephone</span><input type="tel" name="Telephone" required placeholder="+34 600 000 000" class="h-12 rounded-2xl border border-slate-200 bg-white px-4 text-base outline-none transition focus:border-brandPink focus:ring-4 focus:ring-brandPink/10"></label>
+          <label class="flex flex-col gap-2"><span class="text-sm font-bold uppercase tracking-[0.12em] text-brandPink">Company name</span><input type="text" name="company_Name" required placeholder="Dashboard Analytics" class="h-12 rounded-2xl border border-slate-200 bg-white px-4 text-base outline-none transition focus:border-brandPink focus:ring-4 focus:ring-brandPink/10"></label>
+          <label class="flex flex-col gap-2"><span class="text-sm font-bold uppercase tracking-[0.12em] text-brandPink">VAT number</span><input type="text" name="VAT_Number" required placeholder="ESB12345678" class="h-12 rounded-2xl border border-slate-200 bg-white px-4 text-base outline-none transition focus:border-brandPink focus:ring-4 focus:ring-brandPink/10"></label>
+          <label class="flex flex-col gap-2 md:col-span-2"><span class="text-sm font-bold uppercase tracking-[0.12em] text-brandPink">Password</span><input type="password" name="Password" required placeholder="Create a secure password" class="h-12 rounded-2xl border border-slate-200 bg-white px-4 text-base outline-none transition focus:border-brandPink focus:ring-4 focus:ring-brandPink/10"></label>
+        </div>
+
+        <div class="mt-6 rounded-3xl bg-brandBg p-5">
+          <label class="flex items-start gap-3 text-sm leading-6 text-brandBlue"><input type="checkbox" name="Consent" required class="mt-1 h-5 w-5 rounded border-slate-300 text-brandPink"><span>I consent to receiving news, events and special offers from Dashboard Analytics. By clicking on <strong>Create account</strong>, I accept the Terms of Service and Privacy Policy.</span></label>
+        </div>
+
+        <button type="submit" class="mt-8 inline-flex w-full items-center justify-center rounded-full bg-brandPink px-8 py-4 text-lg font-bold text-white transition hover:bg-brandBlue">Create account</button>
+        <p class="mt-5 text-center text-base text-brandBlue/75 sm:hidden">Already have an account? <a href="signin.html" class="font-bold text-brandPink hover:underline">Sign in</a></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="mt-16 border-t-[10px] border-brandPink bg-brandBlue text-white">
+  <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+      <div class="flex flex-col items-center gap-6 lg:flex-row lg:gap-10">
+        <img src="./images/logo-footer.svg" alt="Dashboard Analytics" class="h-8 w-auto">
+        <ul class="flex flex-col items-center gap-3 text-sm sm:flex-row sm:gap-6">
+          <li><a href="index.html" class="hover:text-brandPink">Main Features</a></li>
+          <li><a href="pricing.html" class="hover:text-brandPink">Pricing Plans</a></li>
+          <li><a href="faqs.html" class="hover:text-brandPink">FAQ</a></li>
+        </ul>
+      </div>
+      <ul class="flex items-center justify-center gap-5 text-white">
+        <li><a class="social-icon facebook hover:text-brandPink" href="https://www.facebook.com" aria-label="Facebook"></a></li>
+        <li><a class="social-icon twitter hover:text-brandPink" href="https://www.twitter.com" aria-label="Twitter"></a></li>
+        <li><a class="social-icon instagram hover:text-brandPink" href="https://www.instagram.com" aria-label="Instagram"></a></li>
+        <li><a class="social-icon tlf hover:text-brandPink" href="#" aria-label="Phone"></a></li>
+        <li><a class="social-icon email hover:text-brandPink" href="#" aria-label="Email"></a></li>
+      </ul>
+    </div>
+    <div class="mt-8 border-t border-white/10 pt-6 text-center text-sm text-white/85">
+      <p>
+        This design is made with <a href="https://www.figma.com/" class="underline">Figma</a>
+        and based on a template designed by <a href="https://www.figma.com/@zanimanski" class="underline">Valery Zanimanski</a>,
+        and licensed under <a href="https://creativecommons.org/licenses/by/4.0/" class="underline">CC BY 4.0</a>.
+        Some modifications were made to the original design.
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const isHidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isHidden));
+    });
+  }
+</script>
+</body>
+</html>

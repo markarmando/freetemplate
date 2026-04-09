@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="Dashboard Analytics" content="Meta description de la página" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBlue: '#172755',
+            brandPink: '#D11067',
+            brandBg: '#EAEDF4',
+            brandPurple: '#7357FF',
+            brandGray: '#666666'
+          },
+          fontFamily: {
+            heading: ['Nunito', 'sans-serif'],
+            body: ['Roboto', 'sans-serif']
+          },
+          boxShadow: {
+            card: '0 20px 40px rgba(23,39,85,.12)',
+            float: '26px 28px 31px -13px rgba(0,0,0,0.42)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'segicons';
+      src: url('./fonts/segicons.eot?65778044');
+      src: url('./fonts/segicons.eot?65778044#iefix') format('embedded-opentype'),
+           url('./fonts/segicons.woff?65778044') format('woff'),
+           url('./fonts/segicons.ttf?65778044') format('truetype'),
+           url('./fonts/segicons.svg?65778044#segicons') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: #EAEDF4; }
+    .skip-link{position:absolute;left:1rem;top:-5rem;transition:top .2s ease;z-index:60;}
+    .skip-link:focus{top:1rem;}
+    .social-icon::before{font-family:'segicons';font-size:1.125rem;line-height:1;display:block;}
+    .facebook::before{content:"\F09a"}.twitter::before{content:"\F099"}.instagram::before{content:"\F16d"}.tlf::before{content:"\E801"}.email::before{content:"\F0e0"}
+    .feature-sprite{background-image:url('./images/sprite-icons.png');background-repeat:no-repeat;background-size:312px auto;width:104px;height:91px;transition:transform .25s ease, filter .25s ease;}
+    .feature-card:hover .feature-sprite{transform:translateY(-4px) scale(1.04);filter:drop-shadow(0 10px 18px rgba(23,39,85,.12));}
+    @media (min-width: 768px){.feature-sprite{background-size:351px auto;width:117px;height:103px;}}
+    .sprite-clock{background-position:0 0;}
+    .sprite-screen{background-position:-130px 0;}
+    .sprite-rocket{background-position:-260px 0;}
+  </style>
+</head>
+<body class="font-body text-brandBlue">
+<title>Main Features</title>
+<header class="sticky top-0 z-50 bg-brandBlue/95 backdrop-blur supports-[backdrop-filter]:bg-brandBlue/90 shadow-lg">
+  <a href="#main-content" class="skip-link rounded-xl border-2 border-brandPink bg-brandBlue px-4 py-3 text-white">Skip to Main Content</a>
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 sm:px-6 lg:px-8">
+    <a href="index.html" class="shrink-0"><img src="./images/logo-header.svg" alt="Dashboard Analytics" class="h-8 w-auto sm:h-10"></a>
+    <button id="menuBtn" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 text-white md:hidden" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <div class="hidden items-center gap-8 md:flex">
+      <nav class="flex items-center gap-6"><a href="index.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-white md:border-brandPink text-white">Main Features</a><a href="pricing.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">Pricing & Opinions</a><a href="faqs.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">FAQs</a></nav>
+      <div class="flex items-center gap-3 text-base">
+        <a href="signin.html" class="text-white/90 transition hover:text-white">Sign In</a>
+        <a href="register.html" class="rounded-full bg-brandPink px-5 py-2.5 font-medium text-white transition hover:bg-white hover:text-brandPink">Sign Up</a>
+      </div>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden border-t border-white/10 px-4 pb-4 md:hidden">
+    <nav class="flex flex-col gap-2 pt-4">
+      <a href="index.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-white md:border-brandPink text-white">Main Features</a>
+      <a href="pricing.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">Pricing & Opinions</a>
+      <a href="faqs.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">FAQs</a>
+      <div class="mt-2 flex flex-col gap-2">
+        <a href="signin.html" class="rounded-xl border border-white/20 px-4 py-3 text-white/90">Sign In</a>
+        <a href="register.html" class="rounded-xl bg-brandPink px-4 py-3 text-center font-medium text-white">Sign Up</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+  <section class="overflow-hidden border-b-[12px] border-brandPink bg-brandBlue">
+    <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[minmax(0,540px)_minmax(0,1fr)] lg:gap-12 lg:px-8 lg:py-20">
+      <div class="order-2 lg:order-1 text-white">
+        <h1 class="max-w-xl font-heading text-4xl font-extrabold leading-tight sm:text-5xl">Monitor your business on real-time dashboard</h1>
+        <p class="mt-6 max-w-xl text-lg leading-8 text-white/85">A live dashboard is a performance tool used to analyze, track, and report on the company’s data in real time with the help of interactive data visualizations. These real time dashboards are automatically updated and provide the user with instant access to critical data.</p>
+        <div class="mt-8"><a href="register.html" class="inline-flex rounded-full bg-brandPink px-8 py-4 text-lg font-medium text-white transition hover:bg-white hover:text-brandPink">Try for free</a></div>
+      </div>
+      <div class="order-1 lg:order-2 relative mx-auto hidden w-full max-w-2xl lg:block lg:max-w-none">
+        <img src="./images/all-widgets.png" alt="all graphic charts" class="ml-auto w-full rounded-l-[32px] rounded-r-[24px] bg-white p-3 shadow-float sm:p-5 lg:max-w-[680px]">
+        <img src="./images/chart-concentric.png" alt="chosen options in relation with age" class="absolute -left-1 bottom-6 w-28 rounded-[24px] bg-white p-4 shadow-float sm:-left-8 sm:bottom-10 sm:w-40 sm:p-6 lg:-left-12 lg:bottom-16 lg:w-52">
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 sm:py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="font-heading text-4xl font-extrabold sm:text-5xl">Main Features</h2>
+        <p class="mt-5 text-lg leading-8 text-brandBlue/85">What is Dashboard Analytics? It is simply: a tool to tell a story with your data using its charts and tables. It allows you to turn boring reports into more interactive and compact ones.</p>
+      </div>
+      <div class="mt-12 grid gap-6 md:grid-cols-3 lg:gap-8">
+        <article class="feature-card rounded-[28px] bg-white px-6 py-8 text-center shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_48px_rgba(23,39,85,.18)] hover:ring-1 hover:ring-brandPink/20">
+          <div class="mx-auto w-40 h-40 flex items-center justify-center rounded-lg bg-[#EAEDF4] group transition hover:bg-[#7357FF]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-[#7357FF] group-hover:text-white transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <circle cx="12" cy="12" r="9" stroke-width="2"/>
+              <path d="M12 7v5l3 3" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="mt-4 font-heading text-2xl font-bold">Support Service 24/7</h3>
+          <p class="mt-4 leading-7 text-brandBlue/75">Having problems? Thanks to our full support service you will be able to solve any issue in less than 24h.</p>
+        </article>
+        <article class="feature-card rounded-[28px] bg-white px-6 py-8 text-center shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_48px_rgba(23,39,85,.18)] hover:ring-1 hover:ring-brandPink/20">
+          <div class="mx-auto w-40 h-40 flex items-center justify-center rounded-lg bg-[#EAEDF4] group transition hover:bg-[#7357FF]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-[#7357FF] group-hover:text-white transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <rect x="3" y="4" width="18" height="14" rx="2" stroke-width="2"/>
+              <path d="M8 20h8" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="mt-4 font-heading text-2xl font-bold">Widget System</h3>
+          <p class="mt-4 leading-7 text-brandBlue/75">Customizable interface based on Drag&amp;Drop widgets easy to configure and to adapt to your needs.</p>
+        </article>
+        <article class="feature-card rounded-[28px] bg-white px-6 py-8 text-center shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_48px_rgba(23,39,85,.18)] hover:ring-1 hover:ring-brandPink/20">
+          <div class="mx-auto w-40 h-40 flex items-center justify-center rounded-lg bg-[#EAEDF4] group transition hover:bg-[#7357FF]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-[#7357FF] group-hover:text-white transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="mt-4 font-heading text-2xl font-bold">Best performance</h3>
+          <p class="mt-4 leading-7 text-brandBlue/75">Really fast, real-time dashboard with the best performance in the market.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-14 sm:pb-16 lg:pb-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <h2 class="font-heading text-3xl font-extrabold sm:text-4xl">Automated Reports &amp; Widget Alerts</h2>
+          <p class="mt-5 text-lg leading-8 text-brandBlue/80">Being able to reduce the time spent on manual reporting and focusing on the decision making really is the key to success. Thanks to automated reports and widget alerts you won’t loose any important change in your analytics.</p>
+          <a href="register.html" class="mt-5 inline-flex font-semibold text-brandPink hover:underline">Get your free trial →</a>
+        </div>
+        <div class="mx-auto w-full max-w-md rounded-[28px] bg-white p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_48px_rgba(23,39,85,.18)] sm:p-8"><img src="./images/chart-spiderweb.png" alt="Spiderweb chart" class="w-full"></div>
+
+        <div class="order-4 lg:order-3 mx-auto w-full max-w-md rounded-[28px] bg-white p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_48px_rgba(23,39,85,.18)] sm:p-8"><img src="./images/calendar.png" alt="Calendar widget" class="w-full"></div>
+        <div class="order-3 lg:order-4">
+          <h2 class="font-heading text-3xl font-extrabold sm:text-4xl">Fully customizable to address your needs</h2>
+          <p class="mt-5 text-lg leading-8 text-brandBlue/80">Pull data from popular services like Google and Salesforce with over 100 integrations and 250+ metrics included out of the box.</p>
+          <a href="register.html" class="mt-5 inline-flex font-semibold text-brandPink hover:underline">Get your free trial →</a>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-3xl font-extrabold sm:text-4xl">Pre-built Dashboard Templates</h2>
+          <p class="mt-5 text-lg leading-8 text-brandBlue/80">Get the dashboard reports your clients need in minutes. You will find client report templates for PPC, SEO and social campaigns.</p>
+          <a href="register.html" class="mt-5 inline-flex font-semibold text-brandPink hover:underline">Get your free trial →</a>
+        </div>
+        <div class="mx-auto w-full max-w-md rounded-[28px] bg-white p-6 shadow-card sm:p-8"><img src="./images/chart-bars.png" alt="Bar chart" class="w-full"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="mt-16 border-t-[10px] border-brandPink bg-brandBlue text-white">
+  <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+      <div class="flex flex-col items-center gap-6 lg:flex-row lg:gap-10">
+        <img src="./images/logo-footer.svg" alt="Dashboard Analytics" class="h-8 w-auto">
+        <ul class="flex flex-col items-center gap-3 text-sm sm:flex-row sm:gap-6">
+          <li><a href="index.html" class="hover:text-brandPink">Main Features</a></li>
+          <li><a href="pricing.html" class="hover:text-brandPink">Pricing Plans</a></li>
+          <li><a href="faqs.html" class="hover:text-brandPink">FAQ</a></li>
+        </ul>
+      </div>
+      <ul class="flex items-center justify-center gap-5 text-white">
+        <li><a class="social-icon facebook hover:text-brandPink" href="https://www.facebook.com" aria-label="Facebook"></a></li>
+        <li><a class="social-icon twitter hover:text-brandPink" href="https://www.twitter.com" aria-label="Twitter"></a></li>
+        <li><a class="social-icon instagram hover:text-brandPink" href="https://www.instagram.com" aria-label="Instagram"></a></li>
+        <li><a class="social-icon tlf hover:text-brandPink" href="#" aria-label="Phone"></a></li>
+        <li><a class="social-icon email hover:text-brandPink" href="#" aria-label="Email"></a></li>
+      </ul>
+    </div>
+    <div class="mt-8 border-t border-white/10 pt-6 text-center text-sm text-white/85">
+      <p>
+        Designed and developed by <a href="https://www.teknic.cat/" class="underline">Armando Mihali</a>
+        and licensed under <a href="https://creativecommons.org/licenses/by/4.0/" class="underline">CC BY 4.0</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const isHidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isHidden));
+    });
+  }
+</script>
+</body>
+</html>

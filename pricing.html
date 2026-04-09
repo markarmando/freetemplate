@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="Dashboard Analytics" content="Meta description de la página" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBlue: '#172755',
+            brandPink: '#D11067',
+            brandBg: '#EAEDF4',
+            brandPurple: '#7357FF',
+            brandGray: '#666666'
+          },
+          fontFamily: {
+            heading: ['Nunito', 'sans-serif'],
+            body: ['Roboto', 'sans-serif']
+          },
+          boxShadow: {
+            card: '0 20px 40px rgba(23,39,85,.12)',
+            float: '26px 28px 31px -13px rgba(0,0,0,0.42)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'segicons';
+      src: url('./fonts/segicons.eot?65778044');
+      src: url('./fonts/segicons.eot?65778044#iefix') format('embedded-opentype'),
+           url('./fonts/segicons.woff?65778044') format('woff'),
+           url('./fonts/segicons.ttf?65778044') format('truetype'),
+           url('./fonts/segicons.svg?65778044#segicons') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: #EAEDF4; }
+    .skip-link{position:absolute;left:1rem;top:-5rem;transition:top .2s ease;z-index:60;}
+    .skip-link:focus{top:1rem;}
+    .social-icon::before{font-family:'segicons';font-size:1.125rem;line-height:1;display:block;}
+    .facebook::before{content:"\F09a"}.twitter::before{content:"\F099"}.instagram::before{content:"\F16d"}.tlf::before{content:"\E801"}.email::before{content:"\F0e0"}
+    .feature-sprite{background-image:url('./images/sprite-icons.png');background-repeat:no-repeat;background-size:390px auto;width:130px;height:114px;}
+    .sprite-clock{background-position:0 0;}
+    .sprite-screen{background-position:-130px 0;}
+    .sprite-rocket{background-position:-260px 0;}
+    .plan-card:hover .plan-sub,.plan-card:hover .plan-period{color:rgba(255,255,255,.78);}
+    .plan-card:hover .plan-divider{background:rgba(255,255,255,.55);}
+    .plan-card:hover .plan-btn{border-color:#fff;color:#fff;background:transparent;}
+    .plan-btn:hover{background:#D11067 !important;border-color:#D11067 !important;color:#fff !important;}
+  </style>
+</head>
+<body class="font-body text-brandBlue">
+<title>Pricing & Opinions</title>
+<header class="sticky top-0 z-50 bg-brandBlue/95 backdrop-blur supports-[backdrop-filter]:bg-brandBlue/90 shadow-lg">
+  <a href="#main-content" class="skip-link rounded-xl border-2 border-brandPink bg-brandBlue px-4 py-3 text-white">Skip to Main Content</a>
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 sm:px-6 lg:px-8">
+    <a href="index.html" class="shrink-0"><img src="./images/logo-header.svg" alt="Dashboard Analytics" class="h-8 w-auto sm:h-10"></a>
+    <button id="menuBtn" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 text-white md:hidden" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <div class="hidden items-center gap-8 md:flex">
+      <nav class="flex items-center gap-6"><a href="index.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">Main Features</a><a href="pricing.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-white md:border-brandPink text-white">Pricing & Opinions</a><a href="faqs.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">FAQs</a></nav>
+      <div class="flex items-center gap-3 text-base">
+        <a href="signin.html" class="text-white/90 transition hover:text-white">Sign In</a>
+        <a href="register.html" class="rounded-full bg-brandPink px-5 py-2.5 font-medium text-white transition hover:bg-white hover:text-brandPink">Sign Up</a>
+      </div>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden border-t border-white/10 px-4 pb-4 md:hidden">
+    <nav class="flex flex-col gap-2 pt-4">
+      <a href="index.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">Main Features</a>
+      <a href="pricing.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-white md:border-brandPink text-white">Pricing & Opinions</a>
+      <a href="faqs.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">FAQs</a>
+      <div class="mt-2 flex flex-col gap-2">
+        <a href="signin.html" class="rounded-xl border border-white/20 px-4 py-3 text-white/90">Sign In</a>
+        <a href="register.html" class="rounded-xl bg-brandPink px-4 py-3 text-center font-medium text-white">Sign Up</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1" class="pb-4">
+  <section class="px-4 pt-12 text-center sm:px-6 lg:px-8">
+    <h1 class="font-heading text-4xl font-extrabold sm:text-5xl">Pricing &amp; Opinions</h1>
+  </section>
+
+  <section class="pt-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="font-heading text-4xl font-extrabold text-brandPink sm:text-5xl">Pricing Plans</h2>
+        <p class="mx-auto mt-5 max-w-3xl text-lg leading-8 text-brandBlue/85">Choose the plan that most suits you. If you order for a year you will get a <strong>10% discount</strong>.</p>
+      </div>
+      <div class="mt-12 grid gap-6 lg:grid-cols-3">
+        
+        <article class="plan-card rounded-[28px] border border-brandBlue/10 bg-white px-8 py-10 text-center text-brandBlue shadow-card transition duration-300 hover:-translate-y-1 hover:bg-brandBlue hover:text-white">
+          <h3 class="text-2xl font-semibold">Starter</h3>
+          <p class="plan-sub mt-3 text-brandBlue/70">up to 3 users</p>
+          <div class="plan-divider mx-auto my-6 h-px w-48 bg-brandBlue/15"></div>
+          <p class="font-heading text-6xl font-extrabold">$29</p>
+          <p class="plan-period mt-2 text-brandBlue/70">per month</p>
+          <a href="register.html" class="plan-btn mt-8 inline-flex rounded-full border border-brandBlue px-8 py-3 text-brandBlue transition">Order</a>
+        </article>
+        
+        <article class="plan-card rounded-[28px] border border-brandBlue/10 bg-white px-8 py-10 text-center text-brandBlue shadow-card transition duration-300 hover:-translate-y-1 hover:bg-brandBlue hover:text-white">
+          <h3 class="text-2xl font-semibold">Standart</h3>
+          <p class="plan-sub mt-3 text-brandBlue/70">up to 20 users</p>
+          <div class="plan-divider mx-auto my-6 h-px w-48 bg-brandBlue/15"></div>
+          <p class="font-heading text-6xl font-extrabold">$99</p>
+          <p class="plan-period mt-2 text-brandBlue/70">per month</p>
+          <a href="register.html" class="plan-btn mt-8 inline-flex rounded-full border border-brandBlue px-8 py-3 text-brandBlue transition">Order</a>
+        </article>
+        
+        <article class="plan-card rounded-[28px] border border-brandBlue/10 bg-white px-8 py-10 text-center text-brandBlue shadow-card transition duration-300 hover:-translate-y-1 hover:bg-brandBlue hover:text-white">
+          <h3 class="text-2xl font-semibold">Premium</h3>
+          <p class="plan-sub mt-3 text-brandBlue/70">up to 200 users</p>
+          <div class="plan-divider mx-auto my-6 h-px w-48 bg-brandBlue/15"></div>
+          <p class="font-heading text-6xl font-extrabold">$299</p>
+          <p class="plan-period mt-2 text-brandBlue/70">per month</p>
+          <a href="register.html" class="plan-btn mt-8 inline-flex rounded-full border border-brandBlue px-8 py-3 text-brandBlue transition">Order</a>
+        </article>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="pt-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-center font-heading text-4xl font-extrabold text-brandPink sm:text-5xl">Feature Plans Compared</h2>
+      <div class="mt-10 overflow-hidden rounded-[28px] shadow-card">
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white text-left">
+            <thead class="bg-brandBlue text-white">
+              <tr>
+                <th class="px-6 py-5 font-medium">Feature</th>
+                <th class="px-6 py-5 font-medium">Starter</th>
+                <th class="px-6 py-5 font-medium">Standart</th>
+                <th class="px-6 py-5 font-medium">Premium</th>
+              </tr>
+            </thead>
+            <tbody class="text-brandBlue">
+              <tr class="border-b border-slate-200"><td class="px-6 py-5 font-medium">Number of users</td><td class="px-6 py-5">Up to 3</td><td class="px-6 py-5">Up to 20</td><td class="px-6 py-5">Up to 200</td></tr>
+              <tr class="border-b border-slate-200"><td class="px-6 py-5 font-medium">Number of reports</td><td class="px-6 py-5">10/day</td><td class="px-6 py-5">100/day</td><td class="px-6 py-5">Unlimited</td></tr>
+              <tr class="border-b border-slate-200"><td class="px-6 py-5 font-medium">Widgets per report</td><td class="px-6 py-5">Up to 20</td><td class="px-6 py-5">Unlimited</td><td class="px-6 py-5">Unlimited</td></tr>
+              <tr><td class="px-6 py-5 font-medium">3rd party plugins</td><td class="px-6 py-5">None</td><td class="px-6 py-5">Up to 10</td><td class="px-6 py-5">Unlimited</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pt-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-center font-heading text-4xl font-extrabold text-brandPink sm:text-5xl">Reviews by our customers</h2>
+      <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        
+        <div>
+          <article class="relative rounded-[24px] bg-white p-6 text-brandGray shadow-card before:absolute before:left-8 before:top-full before:h-0 before:w-0 before:border-l-[18px] before:border-r-[18px] before:border-t-[22px] before:border-l-transparent before:border-r-transparent before:border-t-white before:content-['']">
+            <div class="flex items-center gap-4">
+              <img src="./images/slack.svg" alt="Slack logo" class="h-10 w-auto">
+              <h3 class="text-xl font-bold text-brandBlue">Slack</h3>
+            </div>
+            <p class="mt-5 text-lg leading-8">“Being able to reduce the time spent on manual reporting and focusing on the decision making really is the key to success.”</p>
+          </article>
+          <div class="px-4 pt-8 text-brandBlue">
+            <h4 class="text-lg font-bold">Dimitris Vogiatzis</h4>
+            <p>Analytics Engineer</p>
+          </div>
+        </div>
+        
+        <div>
+          <article class="relative rounded-[24px] bg-white p-6 text-brandGray shadow-card before:absolute before:left-8 before:top-full before:h-0 before:w-0 before:border-l-[18px] before:border-r-[18px] before:border-t-[22px] before:border-l-transparent before:border-r-transparent before:border-t-white before:content-['']">
+            <div class="flex items-center gap-4">
+              <img src="./images/dropbox.svg" alt="Dropbox logo" class="h-10 w-auto">
+              <h3 class="text-xl font-bold text-brandBlue">Dropbox</h3>
+            </div>
+            <p class="mt-5 text-lg leading-8">“It connects a lot of things and it’s constantly getting better!”</p>
+          </article>
+          <div class="px-4 pt-8 text-brandBlue">
+            <h4 class="text-lg font-bold">Simo Ahava</h4>
+            <p>GTM Specialist</p>
+          </div>
+        </div>
+        
+        <div>
+          <article class="relative rounded-[24px] bg-white p-6 text-brandGray shadow-card before:absolute before:left-8 before:top-full before:h-0 before:w-0 before:border-l-[18px] before:border-r-[18px] before:border-t-[22px] before:border-l-transparent before:border-r-transparent before:border-t-white before:content-['']">
+            <div class="flex items-center gap-4">
+              <img src="./images/xero.svg" alt="Xero logo" class="h-10 w-auto">
+              <h3 class="text-xl font-bold text-brandBlue">Xero</h3>
+            </div>
+            <p class="mt-5 text-lg leading-8">“I really like how customizable reports are. Whether you're updating the theme colors, page sizing, chart settings...”</p>
+          </article>
+          <div class="px-4 pt-8 text-brandBlue">
+            <h4 class="text-lg font-bold">Avinash Kaushik</h4>
+            <p>SEO Guru</p>
+          </div>
+        </div>
+        
+        <div>
+          <article class="relative rounded-[24px] bg-white p-6 text-brandGray shadow-card before:absolute before:left-8 before:top-full before:h-0 before:w-0 before:border-l-[18px] before:border-r-[18px] before:border-t-[22px] before:border-l-transparent before:border-r-transparent before:border-t-white before:content-['']">
+            <div class="flex items-center gap-4">
+              <img src="./images/hubspot.svg" alt="Hubspot logo" class="h-10 w-auto">
+              <h3 class="text-xl font-bold text-brandBlue">Hubspot</h3>
+            </div>
+            <p class="mt-5 text-lg leading-8">“It is a good analytical tool, very intuitive, with a fluid and flexible interface, easy to implement, its design is excellent”</p>
+          </article>
+          <div class="px-4 pt-8 text-brandBlue">
+            <h4 class="text-lg font-bold">Mat Cutts</h4>
+            <p>CEO</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="mt-16 border-t-[10px] border-brandPink bg-brandBlue text-white">
+  <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+      <div class="flex flex-col items-center gap-6 lg:flex-row lg:gap-10">
+        <img src="./images/logo-footer.svg" alt="Dashboard Analytics" class="h-8 w-auto">
+        <ul class="flex flex-col items-center gap-3 text-sm sm:flex-row sm:gap-6">
+          <li><a href="index.html" class="hover:text-brandPink">Main Features</a></li>
+          <li><a href="pricing.html" class="hover:text-brandPink">Pricing Plans</a></li>
+          <li><a href="faqs.html" class="hover:text-brandPink">FAQ</a></li>
+        </ul>
+      </div>
+      <ul class="flex items-center justify-center gap-5 text-white">
+        <li><a class="social-icon facebook hover:text-brandPink" href="https://www.facebook.com" aria-label="Facebook"></a></li>
+        <li><a class="social-icon twitter hover:text-brandPink" href="https://www.twitter.com" aria-label="Twitter"></a></li>
+        <li><a class="social-icon instagram hover:text-brandPink" href="https://www.instagram.com" aria-label="Instagram"></a></li>
+        <li><a class="social-icon tlf hover:text-brandPink" href="#" aria-label="Phone"></a></li>
+        <li><a class="social-icon email hover:text-brandPink" href="#" aria-label="Email"></a></li>
+      </ul>
+    </div>
+    <div class="mt-8 border-t border-white/10 pt-6 text-center text-sm text-white/85">
+      <p>
+        This design is made with <a href="https://www.figma.com/" class="underline">Figma</a>
+        and based on a template designed by <a href="https://www.figma.com/@zanimanski" class="underline">Valery Zanimanski</a>,
+        and licensed under <a href="https://creativecommons.org/licenses/by/4.0/" class="underline">CC BY 4.0</a>.
+        Some modifications were made to the original design.
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const isHidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isHidden));
+    });
+  }
+</script>
+</body>
+</html>

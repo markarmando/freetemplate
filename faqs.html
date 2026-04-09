@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="Dashboard Analytics" content="Meta description de la página" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBlue: '#172755',
+            brandPink: '#D11067',
+            brandBg: '#EAEDF4',
+            brandPurple: '#7357FF',
+            brandGray: '#666666'
+          },
+          fontFamily: {
+            heading: ['Nunito', 'sans-serif'],
+            body: ['Roboto', 'sans-serif']
+          },
+          boxShadow: {
+            card: '0 20px 40px rgba(23,39,85,.12)',
+            float: '26px 28px 31px -13px rgba(0,0,0,0.42)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'segicons';
+      src: url('./fonts/segicons.eot?65778044');
+      src: url('./fonts/segicons.eot?65778044#iefix') format('embedded-opentype'),
+           url('./fonts/segicons.woff?65778044') format('woff'),
+           url('./fonts/segicons.ttf?65778044') format('truetype'),
+           url('./fonts/segicons.svg?65778044#segicons') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: #EAEDF4; }
+    .skip-link{position:absolute;left:1rem;top:-5rem;transition:top .2s ease;z-index:60;}
+    .skip-link:focus{top:1rem;}
+    .social-icon::before{font-family:'segicons';font-size:1.125rem;line-height:1;display:block;}
+    .facebook::before{content:"\F09a"}.twitter::before{content:"\F099"}.instagram::before{content:"\F16d"}.tlf::before{content:"\E801"}.email::before{content:"\F0e0"}
+    .feature-sprite{background-image:url('./images/sprite-icons.png');background-repeat:no-repeat;background-size:390px auto;width:130px;height:114px;}
+    .sprite-clock{background-position:0 0;}
+    .sprite-screen{background-position:-130px 0;}
+    .sprite-rocket{background-position:-260px 0;}
+  </style>
+</head>
+<body class="font-body text-brandBlue">
+<title>FAQs</title>
+<header class="sticky top-0 z-50 bg-brandBlue/95 backdrop-blur supports-[backdrop-filter]:bg-brandBlue/90 shadow-lg">
+  <a href="#main-content" class="skip-link rounded-xl border-2 border-brandPink bg-brandBlue px-4 py-3 text-white">Skip to Main Content</a>
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 sm:px-6 lg:px-8">
+    <a href="index.html" class="shrink-0"><img src="./images/logo-header.svg" alt="Dashboard Analytics" class="h-8 w-auto sm:h-10"></a>
+    <button id="menuBtn" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 text-white md:hidden" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <div class="hidden items-center gap-8 md:flex">
+      <nav class="flex items-center gap-6"><a href="index.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">Main Features</a><a href="pricing.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">Pricing & Opinions</a><a href="faqs.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-white md:border-brandPink text-white">FAQs</a></nav>
+      <div class="flex items-center gap-3 text-base">
+        <a href="signin.html" class="text-white/90 transition hover:text-white">Sign In</a>
+        <a href="register.html" class="rounded-full bg-brandPink px-5 py-2.5 font-medium text-white transition hover:bg-white hover:text-brandPink">Sign Up</a>
+      </div>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden border-t border-white/10 px-4 pb-4 md:hidden">
+    <nav class="flex flex-col gap-2 pt-4">
+      <a href="index.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">Main Features</a>
+      <a href="pricing.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-transparent text-white/90 hover:text-white hover:border-white/70">Pricing & Opinions</a>
+      <a href="faqs.html" class="inline-flex items-center py-2 text-base transition border-b-4 border-white md:border-brandPink text-white">FAQs</a>
+      <div class="mt-2 flex flex-col gap-2">
+        <a href="signin.html" class="rounded-xl border border-white/20 px-4 py-3 text-white/90">Sign In</a>
+        <a href="register.html" class="rounded-xl bg-brandPink px-4 py-3 text-center font-medium text-white">Sign Up</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+  <section class="px-4 pt-12 text-center sm:px-6 lg:px-8">
+    <h1 class="font-heading text-4xl font-extrabold sm:text-5xl">Frequently Asked Questions</h1>
+  </section>
+
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl space-y-12 px-4 sm:px-6 lg:px-8">
+      <div>
+        <div class="mb-6">
+          <h2 class="font-heading text-4xl font-extrabold text-brandPink">Product FAQs</h2>
+          <span class="mt-4 block h-1.5 w-24 rounded-full bg-brandPink"></span>
+        </div>
+        <div class="space-y-5">
+          <article class="rounded-[24px] bg-white p-6 shadow-card sm:p-8"><h3 class="text-2xl font-bold text-brandPurple">What do I get when I purchase a Data Studio template?</h3><p class="mt-4 text-lg leading-8">When you purchase a <span class="font-medium text-brandPink underline">Data Studio template</span> you are getting a custom built dashboard that visualizes and displays your data.</p><p class="mt-4 text-lg leading-8"><strong>Google Data Studio</strong> seamlessly connects with other products from the Google Marketing Platform. This means that once you have purchased a report, you can connect your Google Analytics (or any other data source) to the template and begin analyzing your own data to better understand your business. Purchasing a template gives you access to a hidden template that you are able to copy. Once you have copied it, the copied version is yours to edit and change as you like.</p></article>
+          <article class="rounded-[24px] bg-white p-6 shadow-card sm:p-8"><h3 class="text-2xl font-bold text-brandPurple">What happens once I purchase a Data Studio template?</h3><p class="mt-4 text-lg leading-8">Once you have decided on a Template added it to your cart and purchased it you will be taken to an order complete template which contains links for you to access your template. At the same time you will also receive an email with your purchase confirmation as well as links to the template you purchased. These links will direct you to a template that you are able to copy and then own the copied version.</p><p class="mt-4 text-lg leading-8">In the event that you do not receive a link to the template you purchased or an email, please get in touch with us and we will provide access to the template within 24 hours.</p></article>
+          <article class="rounded-[24px] bg-white p-6 shadow-card sm:p-8"><h3 class="text-2xl font-bold text-brandPurple">How do I add a Data Studio template to my Data Studio account?</h3><p class="mt-4 text-lg leading-8">When you click on the “Get Template” link provided in the email you are taken to a version of the template that you can then make a copy by clicking on the button in the top right corner of the report (sometimes this bar is hidden and you need to hover over the top of the report for it to appear).</p></article>
+        </div>
+      </div>
+
+      <div>
+        <div class="mb-6">
+          <h2 class="font-heading text-4xl font-extrabold text-brandPink">General FAQs</h2>
+          <span class="mt-4 block h-1.5 w-24 rounded-full bg-brandPink"></span>
+        </div>
+        <div class="space-y-5">
+          <article class="rounded-[24px] bg-white p-6 shadow-card sm:p-8"><h3 class="text-2xl font-bold text-brandPurple">What is a Data Studio template?</h3><p class="mt-4 text-lg leading-8">A Data Studio template is a reporting template that can be used with Google’s data visualization tool Data Studio.</p><p class="mt-4 text-lg leading-8">Data Studio templates come in many different shapes and sizes, and can visualize your data in attractive, stylish reports. Data Studio connects to a multitude of data sources, such as:</p><ul class="mt-4 list-disc space-y-2 pl-6 text-lg leading-8"><li class="text-brandPink underline">Google Analytics</li><li class="text-brandPink underline">Google Ads</li><li class="text-brandPink underline">Google Search Console</li><li class="text-brandPink underline">Google Sheets</li><li>SQL databases and...</li><li>many more!</li></ul><p class="mt-4 text-lg leading-8">Whereas previously you had to look at data in each of these products separately, with Data Studio you can combine multiple data sources into one comprehensive report.</p></article>
+          <article class="rounded-[24px] bg-white p-6 shadow-card sm:p-8"><h3 class="text-2xl font-bold text-brandPurple">Is Google Data Studio free?</h3><p class="mt-4 text-lg leading-8">Yes, Data Studio is free. It is part of the Google Marketing Platform, which also includes the popular website measurement tool Google Analytics.</p><p class="mt-4 text-lg leading-8">Some of the reports that we offer connect to data sources that require a 3rd party connector like Supermetrics. In these case you may need to purchase a subscription from the connector in order for the template to connect to these data sources. In these cases we have clearly stated this in the template description.</p><p class="mt-4 text-lg leading-8">While this is the case, Data Studio itself is still free and if you want to access certain data sources, whether you use data studio or any other dashboarding or BI tool, you will still require a 3rd party connector.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="mt-16 border-t-[10px] border-brandPink bg-brandBlue text-white">
+  <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+      <div class="flex flex-col items-center gap-6 lg:flex-row lg:gap-10">
+        <img src="./images/logo-footer.svg" alt="Dashboard Analytics" class="h-8 w-auto">
+        <ul class="flex flex-col items-center gap-3 text-sm sm:flex-row sm:gap-6">
+          <li><a href="index.html" class="hover:text-brandPink">Main Features</a></li>
+          <li><a href="pricing.html" class="hover:text-brandPink">Pricing Plans</a></li>
+          <li><a href="faqs.html" class="hover:text-brandPink">FAQ</a></li>
+        </ul>
+      </div>
+      <ul class="flex items-center justify-center gap-5 text-white">
+        <li><a class="social-icon facebook hover:text-brandPink" href="https://www.facebook.com" aria-label="Facebook"></a></li>
+        <li><a class="social-icon twitter hover:text-brandPink" href="https://www.twitter.com" aria-label="Twitter"></a></li>
+        <li><a class="social-icon instagram hover:text-brandPink" href="https://www.instagram.com" aria-label="Instagram"></a></li>
+        <li><a class="social-icon tlf hover:text-brandPink" href="#" aria-label="Phone"></a></li>
+        <li><a class="social-icon email hover:text-brandPink" href="#" aria-label="Email"></a></li>
+      </ul>
+    </div>
+    <div class="mt-8 border-t border-white/10 pt-6 text-center text-sm text-white/85">
+      <p>
+        This design is made with <a href="https://www.figma.com/" class="underline">Figma</a>
+        and based on a template designed by <a href="https://www.figma.com/@zanimanski" class="underline">Valery Zanimanski</a>,
+        and licensed under <a href="https://creativecommons.org/licenses/by/4.0/" class="underline">CC BY 4.0</a>.
+        Some modifications were made to the original design.
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const isHidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isHidden));
+    });
+  }
+</script>
+</body>
+</html>
